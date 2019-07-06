@@ -6,12 +6,10 @@ import pandas_datareader.data as web
 
 style.use('ggplot')
 
-start = dt.datetime(2000,1,1)
-end = dt.datetime(2016,12,31)
+df = pd.read_csv('tesla.csv', parse_dates=True, index_col=0)
 
-df = web.DataReader('TSLA', 'yahoo', start, end)
-
-df.to_csv('tesla.csv')
+df.plot()
+plt.show()
 
 
 
